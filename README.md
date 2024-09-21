@@ -1,66 +1,22 @@
-## Foundry
+1. mint
+2. burn
+3. transfer
+4. randomize
+5. buy
+6. list
+7. unlist
+8. auction
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+- unlistNft bug
+    If the Nft is in the itemIdToDetails array and then the owner transfers it to another wallet currently the now previous owner is still set to currentOwner meaning they can call unlistNft and transfer the nft back to themself.
 
-Foundry consists of:
+daily completed:
+- add natspec
+- _completePurchase transferFrom parameter to should be _buyer instead of msg.sender
+- write test to check _completePurchase fuction below works correctly
+    specifically when msg.sender calling completeAuction function is the seller of the item and not the buyer
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## Documentation
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Dynamic artwork
+Art by: Steve Johnson: https://www.pexels.com/@steve/
