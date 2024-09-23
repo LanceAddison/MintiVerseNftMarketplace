@@ -86,6 +86,7 @@ contract ArtShift is ERC721, VRFConsumerBaseV2Plus {
 
     /**
      * @notice Randomizes the users nft tokenUri using Chainlink VRF
+     * This will cause the nft to get new details including a new image.
      */
     function randomizeArt(uint256 tokenId) public onlyTokenOwner(tokenId) {
         requestId = requestRandomWords(false);

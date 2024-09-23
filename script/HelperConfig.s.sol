@@ -28,7 +28,7 @@ contract HelperConfig is Script {
 
     function getSepoliaEthConfig() public view returns (NetworkConfig memory) {
         return NetworkConfig({
-            subscriptionId: 98413950849193634705921691051523939907023850956356862350586104453608289414966,
+            subscriptionId: vm.envUint("SUBSCRIPTION_ID"),
             vrfCoordinator: 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B,
             callbackGasLimit: 500000,
             keyHash: 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae,

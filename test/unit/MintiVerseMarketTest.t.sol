@@ -495,4 +495,9 @@ contract MintiVerseMarketTest is Test {
         assertEq(expectedPrice, price);
         assertEq(expectIsListed, listed);
     }
+
+    function testCanGetNftContractAddress() public view {
+        address expectedNftContractAddress = address(artShift);
+        assertEq(expectedNftContractAddress, mintiVerse.getNftContractAddress());
+    }
 }

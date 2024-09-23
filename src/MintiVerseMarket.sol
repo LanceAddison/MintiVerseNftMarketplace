@@ -2,15 +2,13 @@
 pragma solidity ^0.8.25;
 
 import {ArtShift} from "./ArtShift.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-import {console} from "forge-std/console.sol";
 
 /**
  * @title MintiVerse Market
  * @author Lance Addison
  */
-contract MintiVerseMarket is Ownable, ReentrancyGuard {
+contract MintiVerseMarket is ReentrancyGuard {
     /*//////////////////////////////////////////////////////////////
                                  ERRORS
     //////////////////////////////////////////////////////////////*/
@@ -99,7 +97,7 @@ contract MintiVerseMarket is Ownable, ReentrancyGuard {
     /*//////////////////////////////////////////////////////////////
                                FUNCTIONS
     //////////////////////////////////////////////////////////////*/
-    constructor(address artShift) Ownable(msg.sender) {
+    constructor(address artShift) {
         i_artShift = ArtShift(artShift);
     }
 
@@ -355,5 +353,9 @@ contract MintiVerseMarket is Ownable, ReentrancyGuard {
 
     function getItemCount() public view returns (uint256) {
         return s_itemIdCounter;
+    }
+
+    function getNftContractAddress() public view returns (address) {
+        return address(i_artShift);
     }
 }

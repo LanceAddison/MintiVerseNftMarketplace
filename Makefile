@@ -22,7 +22,7 @@ test:; forge test
 
 snapshot:; forge snapshot
 
-format:; forge fmt\
+format:; forge fmt
 
 anvil:; anvil --block-time 1
 
